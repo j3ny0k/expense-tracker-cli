@@ -8,6 +8,8 @@ Simple CLI app to track expenses.
 - show all expenses
 - total expenses
 - total by category
+- input validation (empty input, invalid command)
+- help command
 
 ---
 
@@ -72,15 +74,15 @@ food: 12
 
 Exit the program.
 
+### help
+
+Show available commands.
+
 ---
 
 ## Notes
 
 - data is stored in memory (resets after restart)
 - amount must be a number
-
-## TODO
-
-- [ ] add help command
-
-- [ ] input validation
+- empty input is handled
+- category not found is handled
