@@ -1,2 +1,6 @@
-draft.py
+__pycache__/
+*.pyc
+
 expenses.json
+
+draft.py

@@ -2,14 +2,26 @@
 
 Simple CLI app to track expenses.
 
+## Status
+
+Early learning project.
+
+This project was later integrated into `life-cli`.
+
+Main portfolio version: `life-cli`.
+
+---
+
 ## Features
 
 - add expense (name, amount, category)
 - show all expenses
+- find expenses
 - total expenses
 - total by category
+- edit expense
 - delete expense
-- input validation (empty input, invalid numbers, invalid commands)
+- input validation
 - data is saved to file
 
 ---
@@ -54,6 +66,41 @@ Example:
 
 ---
 
+### find
+
+Find expenses by text or amount.
+
+You can use:
+
+- any text → search in expense name and category
+- number → search by exact amount
+
+Example (text search):
+
+```text
+command: find
+find: food
+1. bread – 12 – food
+```
+
+Example (amount search):
+
+```text
+command: find
+find: 12
+1. bread – 12 – food
+```
+
+If nothing is found:
+
+```text
+command: find
+find: xyz
+not found
+```
+
+---
+
 ### total
 
 Show total amount of all expenses.
@@ -79,6 +126,38 @@ food: 12
 
 ---
 
+### edit
+
+Edit an expense by number.
+
+You can update:
+
+- name
+- amount
+- category
+
+Fields can be left empty to keep old values.
+
+Example:
+
+```text
+command: edit
+expense num: 1
+new name: milk
+new amount: 15
+new category: food
+
+expense updated
+```
+
+If nothing was changed:
+
+```text
+expense not updated
+```
+
+---
+
 ### delete
 
 Delete an expense by number.
@@ -93,15 +172,15 @@ expense deleted
 
 ---
 
-### exit
-
-Exit the program.
-
----
-
 ### help
 
 Show available commands.
+
+---
+
+### exit
+
+Exit the program.
 
 ---
 
@@ -114,3 +193,4 @@ Show available commands.
 - empty input is handled
 - invalid expense number is handled
 - category not found is handled
+- no expenses case is handled
